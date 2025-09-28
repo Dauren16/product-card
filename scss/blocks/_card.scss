@@ -1,0 +1,89 @@
+.card {
+  width: 100%;
+  height: 100%;
+  background-color: $grey;
+  box-shadow: 2px 2px 10px 0px #5150761A;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    margin-bottom: 30px;
+  }
+
+  &__descr {
+    margin: 0 0 5px 0;
+    font-family: $ff;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $dark-grey;
+  }
+
+  &__heading {
+    margin: 0 0 5px 0;
+    font-family: $ff;
+    font-size: 20px;
+    line-height: 27px;
+    color: $violet;
+    font-weight: 700;
+  }
+
+  &__text {
+    margin: 0 0 15px 0;
+    font-family: $ff;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $violet;
+  }
+
+  &__list-title {
+    margin: 0 0 5px 0;
+    font-family: $ff;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $violet;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0 0 0 8px;
+  }
+
+  &__item {
+    margin: 0 0 5px 0;
+    font-family: $ff;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $violet;
+  }
+
+  &__price-wrap {
+    display: flex;
+    margin-top: auto;
+    justify-content: space-between;
+  }
+
+  &__price-title {
+    margin: 0;
+    font-family: $ff;
+    font-size: 20px;
+    line-height: 24px;
+    color: $violet;
+    font-weight: 700;
+  }
+
+  &__price {
+    margin: 0;
+    font-family: $ff;
+    font-size: 20px;
+    line-height: 24px;
+    color: $violet;
+    font-weight: 400;
+  }
+}
