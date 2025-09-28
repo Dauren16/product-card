@@ -1,0 +1,11 @@
+.section {
+  &__heading {
+    font-family: $ff;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 78px;
+    color: $violet;
+    text-align: center;
+    margin: 0 0 110px 0;
+  }
+}
