@@ -361,7 +361,7 @@ a {
 .section__wrapper {
   display: flex;
   flex-direction: column;
-  background-image: url("../../images/picture-bg.jpg");
+  background-image: url("../../images/bg.png");
   background-repeat: no-repeat;
   background-position-x: 0;
   background-position-y: -10%;
