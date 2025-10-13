@@ -335,11 +335,6 @@ a {
 .container {
   max-width: 1110px;
   margin: 0 auto;
-  background-image: url("../../images/picture-bg.jpg");
-  background-repeat: no-repeat;
-  background-position-x: left;
-  background-position-y: -30%;
-  background-size: 790px 697px;
 }
 
 @font-face {
@@ -363,6 +358,15 @@ a {
   font-style: normal;
   font-display: swap;
 }
+.section__wrapper {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../images/picture-bg.jpg");
+  background-repeat: no-repeat;
+  background-position-x: 0;
+  background-position-y: -10%;
+  background-size: 790px 697px;
+}
 .section__heading {
   font-family: "Montserrat", Arial, sans-serif;
   font-weight: 400;
@@ -370,7 +374,7 @@ a {
   line-height: 78px;
   color: #515076;
   text-align: center;
-  margin: 0 0 110px 0;
+  margin: 100px 0 110px 0;
 }
 
 .card-list {
