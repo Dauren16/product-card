@@ -1,0 +1,22 @@
+.section {
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../images/dadelion-bg.png");
+    background-repeat: no-repeat;
+    background-position-x: 0;
+    background-position-y: -10%;
+    background-size: 790px 697px;
+  }
+
+  &__heading {
+    font-family: $ff;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 78px;
+    color: $violet;
+    text-align: center;
+    margin: 100px 0 110px 0;
+  }
+}

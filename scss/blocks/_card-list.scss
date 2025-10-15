@@ -1,0 +1,15 @@
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &__item {
+    width: 340px;
+    height: 573px;
+  }
+}
