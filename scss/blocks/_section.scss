@@ -18,5 +18,9 @@
     color: $violet;
     text-align: center;
     margin: 100px 0 110px 0;
+
+    &--red {
+      color: red;
+    }
   }
 }

@@ -361,7 +361,7 @@ a {
 .section__wrapper {
   display: flex;
   flex-direction: column;
-  background-image: url("../../images/bg.png");
+  background-image: url("../../images/dadelion-bg.png");
   background-repeat: no-repeat;
   background-position-x: 0;
   background-position-y: -10%;
@@ -375,6 +375,9 @@ a {
   color: #515076;
   text-align: center;
   margin: 100px 0 110px 0;
+}
+.section__heading--red {
+  color: red;
 }
 
 .card-list {
@@ -400,6 +403,9 @@ a {
   padding: 25px;
   display: flex;
   flex-direction: column;
+}
+.card--yellow {
+  background-color: yellow;
 }
 .card__image {
   margin-bottom: 30px;
