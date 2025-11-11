@@ -358,6 +358,13 @@ a {
   font-style: normal;
   font-display: swap;
 }
+.btn {
+  background-color: #A5A3B9;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 5px 20px;
+}
+
 .section__wrapper {
   display: flex;
   flex-direction: column;
@@ -376,8 +383,16 @@ a {
   text-align: center;
   margin: 100px 0 110px 0;
 }
-.section__heading--red {
-  color: red;
+.section__buttons-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 50px;
+}
+.section__button-change-color {
+  background-color: forestgreen;
+  color: #fff;
 }
 
 .card-list {

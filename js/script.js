@@ -1,53 +1,66 @@
-//task 2
+// Task 2
 
-const listItemEl = document.querySelector('.card-list__item');
-const buttonEl = document.createElement('button');
-buttonEl.textContent = 'Перекрасить карточку';
-buttonEl.style.backgroundColor = 'green';
-listItemEl.append(buttonEl);
+const productCard = document.querySelector('.card');
+const changeCardColor = document.querySelector('#card-change-color');
+const crimsonColorHash = '#DC143C';
+const blueColorHash = '#0000FF';
 
-buttonEl.addEventListener('click', () => {
-  const cardEl = document.querySelector('.card');
-  cardEl.style.backgroundColor = 'blue';
+changeCardColor.addEventListener('click', () => {
+  productCard.style.backgroundColor = crimsonColorHash
 })
 
-//task3
+// Task 3
+const productCards = document.querySelectorAll('.card');
+const changeCardsColor = document.querySelector('#cards-change-color');
 
-const selectAllBtn = document.createElement('button');
-selectAllBtn.textContent = 'Перекрасить все карточки';
-listItemEl.append(selectAllBtn);
-
-selectAllBtn.addEventListener('click', () => {
-  const cardsEl = document.querySelectorAll('.card');
-  cardsEl.forEach(card => {
-    card.classList.toggle('card--yellow');
-  });
+changeCardsColor.addEventListener('click', () => {
+  productCards.forEach((card) => card.style.backgroundColor = blueColorHash)
 })
 
-//task 4
 
-const openGoogleBtn = document.getElementById('open-google');
-openGoogleBtn.addEventListener('click', () =>{
-  const openGoogleUrl = 'https://www.google.com/';
-  window.open(openGoogleUrl)
+//Task 4
+
+const googleLinkButton = document.querySelector('#link');
+
+googleLinkButton.addEventListener('click', openGoogle);
+
+
+function openGoogle () {
+  const answer = confirm("Вы действительно хотите открыть Google?");
+
+  if (answer === true) {
+    window.open('https://google.com');
+  } else {
+    return;
+  }
+}
+
+//Task 5
+
+const outputLogButton = document.querySelector('#output-console');
+
+outputLogButton.addEventListener('click', () => outputConsoleLog('ДЗ №4'))
+
+function outputConsoleLog(message) {
+  alert(message);
+  console.log(message);
+}
+
+//Task 6
+
+const headingContent = document.querySelector('.section__heading');
+
+
+headingContent.addEventListener('mouseover', () => {
+  console.log(headingContent.textContent);
 })
 
-//task 5
+//Task 7
 
-const h1El = document.querySelector('.section__heading');
-h1El.addEventListener('mouseover', () => {
-  console.log('Выбери свой продукт');
-});
+const changeColorButton = document.querySelector('#button-change-color');
 
-//task 6 
-
-const h1Btn = document.createElement('button');
-h1Btn.textContent = 'Перекрасить';
-h1Btn.style.backgroundColor = 'orange';
-h1El.append(h1Btn);
-
-h1Btn.addEventListener('click', () => {
-  h1El.classList.toggle('section__heading--red')
+changeColorButton.addEventListener('click', () => {
+  changeColorButton.classList.toggle('section__button-change-color')
 })
 
 

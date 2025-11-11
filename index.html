@@ -4,12 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Карточки продуктов по уходу за кожей</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="scss/style.css">
 </head>
 <body>
   <main class="main">
     <section class="section">
       <div class="container">
+        <div class="section__buttons-area">
+          <button id="card-change-color" class="section__card-change-color btn">Перекрасить первую карточку</button>
+          <button id="cards-change-color" class="section__cards-change-color btn">Перекрасить все карточки</button>
+          <button id="link" class="section__link btn">Перейти в Google</button>
+          <button id="output-console" class="section__output-console btn">Вывести в консоль</button>
+          <button id="button-change-color" class="section__button-change-color btn">Сменить цвет кнопки</button>
+        </div>
         <div class="section__wrapper">
           <h1 class="section__heading">Выбери свой продукт</h1>
             <ul class="card-list">
@@ -46,7 +53,6 @@
                   <div class="card__price-wrap">
                     <span class="card__price-title">Цена</span>
                     <span class="card__price">3 500 &#8381;</span>
-                    <button id="open-google">Перейти в Google</button>
                   </div>
                 </div>
               </li>
