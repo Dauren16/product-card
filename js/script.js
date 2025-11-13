@@ -48,11 +48,11 @@ function outputConsoleLog(message) {
 
 //Task 6
 
-const headingContent = document.querySelector('.section__heading');
+const mainTitle = document.querySelector('.section__heading');
 
 
-headingContent.addEventListener('mouseover', () => {
-  console.log(headingContent.textContent);
+mainTitle.addEventListener('mouseover', () => {
+  console.log(mainTitle.textContent);
 })
 
 //Task 7
