@@ -19,4 +19,17 @@
     text-align: center;
     margin: 100px 0 110px 0;
   }
+
+  &__buttons-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-height: 50px;
+  }
+
+  &__button-change-color {
+    background-color: forestgreen;
+    color: #fff;
+  }
 }

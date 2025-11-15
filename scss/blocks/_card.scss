@@ -7,6 +7,10 @@
   display: flex;
   flex-direction: column;
 
+  &--yellow {
+    background-color: yellow;
+  }
+
   &__image {
     margin-bottom: 30px;
   }
@@ -86,4 +90,5 @@
     color: $violet;
     font-weight: 400;
   }
+  
 }
