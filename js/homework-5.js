@@ -1,7 +1,7 @@
 //task 3
 
-function checkTemperature(place, value) {
-  console.log(`Сейчас в ${place} температура ${value} градусов по Цельсию`);
+function checkTemperature(place, temperature) {
+  console.log(`Сейчас в ${place} температура ${temperature} градусов по Цельсию`);
 }
 
 checkTemperature('г. Уральск', 8);
@@ -10,12 +10,12 @@ checkTemperature('г. Уральск', 8);
 
 const SOUND_VELOCITY = 343;
 
-function speedTest (speed) {
+function speedTest(speed) {
   if (speed > SOUND_VELOCITY) {
     console.log('Сверхзвуковая скорость');
   } else if (speed < SOUND_VELOCITY) {
     console.log('Дозвуковая скорость');
-  }  else if (speed === SOUND_VELOCITY) {
+  }  else  {
     console.log('Скорость звука');
   }
 }
@@ -27,7 +27,7 @@ speedTest(343);
 const product = 'Мясо';
 const price = 500;
 
-function getProduct(balance) {
+function сanPurchase(balance) {
   if (balance > price) {
     console.log(`Ваш товар ${product}, приобретен. Спасибо за покупку!`);
   } else {
@@ -35,7 +35,7 @@ function getProduct(balance) {
   }
 }
 
-getProduct(200);
+canPurchase(200);
 
 //task 6
 
