@@ -27,7 +27,7 @@ speedTest(343);
 const product = 'Мясо';
 const price = 500;
 
-function сanPurchase(balance) {
+function buyProduct(balance) {
   if (balance > price) {
     console.log(`Ваш товар ${product}, приобретен. Спасибо за покупку!`);
   } else {
@@ -35,7 +35,7 @@ function сanPurchase(balance) {
   }
 }
 
-canPurchase(200);
+buyProduct(200);
 
 //task 6
 
