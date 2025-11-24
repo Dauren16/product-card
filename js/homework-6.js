@@ -21,29 +21,29 @@ const vehicle = {
   transmission: 'automatic'
 }
 
-const client = { ...user, ...vehicle}
+vehicle.owner = user
 
-console.log(client);
+console.log(user);
 
 // task 5
 
-function checkMaxSpeed(client) {
-  if (!('maxSpeed' in client)) {
-    client.maxSpeed = 500;
+function checkMaxSpeed(obj) {
+  if (!('maxSpeed' in obj)) {
+    obj.maxSpeed = 500;
   } else {
     return;
   }
 }
 
-checkMaxSpeed(client);
+checkMaxSpeed(vehicle);
 
 // task 6
 
-function getValue (client, model) {
-  console.log(client[model]);
+function getProperty(vehicle, model) {
+  console.log(vehicle[model]);
 }
 
-getValue(client, 'model');
+getProperty(vehicle, 'model');
 
 // task 7
 
@@ -141,9 +141,7 @@ console.log(gameCollection);
 // task 10
 
 function addRare(gameCollection) {
-  return gameCollection.map(game => {
-    return { ...game, isRare: game.year > 2017}
-  })
+  return gameCollection.map(game => ({ ...game, isRare: game.year < 2017}))
 }
 
 console.log(addRare(gameCollection));
