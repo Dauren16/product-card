@@ -1,56 +1,62 @@
 // task 2
 
-import { content } from "./comments.js";
+import { content } from "./comments.js"
 
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+//task 2
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 const filteredNumbers = numbers.filter(number => number > 5)
 
 console.log(filteredNumbers);
 
-// task 3
+//task 3
 
-const games = ['Uncharted', 'The Last of Us', 'CS2', 'Dota 2', 'Dead by Daylight'];
+const games = ['Dota 2', 'CS 2', 'Uncharted', 'Left 4 Dead', 'Witcher 3']
 
-const foundGame = games.find(game => game === 'CS2')
+const findedGame = games.find(game => game === 'CS 2')
 
-console.log(foundGame);
+console.log(findedGame);
 
-// task 4
+//task 4
 
 function reverseArray(arr) {
-  const reversedArray = arr.reverse(arr)
-  return reversedArray
+  return arr.reverse(arr)
 }
 
 console.log(reverseArray(numbers));
+console.log(reverseArray(games));
 
-// task 7
+//task 7
 
 const filteredByEmail = content.filter(element => element.email.includes('.com'))
 
 console.log(filteredByEmail);
 
-// task 9
+//task 8
 
-const filteredById = content.map(element => ({id: element.id, name: element.name}))
+const filteredByPostId = content.map(element => ({...element, postId: element.postId  <= 5 ? 2 : 1}))
 
-console.log(filteredById);
+console.log(filteredByPostId);
 
-// task 10
+//task 9
 
+const filteredbyName = content.map(element => ({name: element.name, id: element.id}))
+
+console.log(filteredbyName);
+
+//task 10
 
 const updatedContent = content.map(element => ({...element, isInvalid: element.body.length > 180}))
 
 console.log(updatedContent);
 
+//task 11
 
-// task 11
+const emails = content.map(item => item.email)
+console.log(emails);
 
-const emailsList = content.map(element => ({email: element.email}))
-
-console.log(emailsList);
-
+// через Reduce сам не смог реализовать
 const emailsListByReduce = content.reduce((acc, element) => {
   acc.push(element.email)
   return acc
@@ -58,15 +64,12 @@ const emailsListByReduce = content.reduce((acc, element) => {
 
 console.log(emailsListByReduce);
 
-// task 12
+//task 12
 
-const emailsString = checkEmails.toString();
+const emailsString = emails.toString()
 console.log(emailsString);
 
-const reducedEmailsString = checkEmailsByReduce.join(' ')
+const reducedEmailsString = emailsListByReduce.join(' ')
 console.log(reducedEmailsString);
-
-
-
 
 
