@@ -1,6 +1,6 @@
 // task 2
 
-import { content } from "./comments.js"
+import { userComments, users } from "./comments.js"
 
 
 //task 2
@@ -29,35 +29,35 @@ console.log(reverseArray(games));
 
 //task 7
 
-const filteredByEmail = content.filter(element => element.email.includes('.com'))
+const filteredByEmail = userComments.filter(element => element.email.includes('.com'))
 
 console.log(filteredByEmail);
 
 //task 8
 
-const filteredByPostId = content.map(element => ({...element, postId: element.postId  <= 5 ? 2 : 1}))
+const filteredByPostId = userComments.map(element => ({...element, postId: element.postId  <= 5 ? 2 : 1}))
 
 console.log(filteredByPostId);
 
 //task 9
 
-const filteredbyName = content.map(element => ({name: element.name, id: element.id}))
+const filteredbyName = userComments.map(element => ({name: element.name, id: element.id}))
 
 console.log(filteredbyName);
 
 //task 10
 
-const updatedContent = content.map(element => ({...element, isInvalid: element.body.length > 180}))
+const updatedContent = userComments.map(element => ({...element, isInvalid: element.body.length > 180}))
 
 console.log(updatedContent);
 
 //task 11
 
-const emails = content.map(item => item.email)
+const emails = userComments.map(element => element.email)
 console.log(emails);
 
 // через Reduce сам не смог реализовать
-const emailsListByReduce = content.reduce((acc, element) => {
+const emailsListByReduce = userComments.reduce((acc, element) => {
   acc.push(element.email)
   return acc
 },  [])

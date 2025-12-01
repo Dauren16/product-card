@@ -1,6 +1,6 @@
 // task 6
 
-export const content = [
+export const userComments = [
   {
     postId: 1,
     id: 1,
