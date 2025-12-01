@@ -1,6 +1,6 @@
 // task 2
 
-import { userComments, users } from "./comments.js"
+import { userComments } from "./comments.js"
 
 
 //task 2
