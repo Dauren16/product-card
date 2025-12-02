@@ -29,31 +29,31 @@ console.log(reverseArray(games));
 
 //task 7
 
-const filteredByEmail = userComments.filter(element => element.email.includes('.com'))
+const filteredByEmail = userComments.filter(comment => comment.email.includes('.com'))
 
 console.log(filteredByEmail);
 
 //task 8
 
-const filteredByPostId = userComments.map(element => ({...element, postId: element.postId  <= 5 ? 2 : 1}))
+const filteredByPostId = userComments.map(comment => ({...comment, postId: element.postId  <= 5 ? 2 : 1}))
 
 console.log(filteredByPostId);
 
 //task 9
 
-const filteredbyName = userComments.map(element => ({name: element.name, id: element.id}))
+const filteredbyName = userComments.map(comment => ({name: comment.name, id: comment.id}))
 
 console.log(filteredbyName);
 
 //task 10
 
-const updatedContent = userComments.map(element => ({...element, isInvalid: element.body.length > 180}))
+const updatedContent = userComments.map(comment => ({...comment, isInvalid: comment.body.length > 180}))
 
 console.log(updatedContent);
 
 //task 11
 
-const emails = userComments.map(element => element.email)
+const emails = userComments.map(comment => comment.email)
 console.log(emails);
 
 // через Reduce сам не смог реализовать
