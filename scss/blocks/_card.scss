@@ -56,6 +56,10 @@
     flex-direction: column;
     margin: 0;
     padding: 0 0 0 8px;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $violet;
   }
 
   &__item {
