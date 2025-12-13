@@ -457,11 +457,21 @@ a {
   font-weight: 400;
   color: #515076;
 }
-.card__list {
+.card__composition {
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0 0 0 8px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #515076;
+}
+.card__composition li {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #515076;
 }
 .card__item {
   margin: 0 0 5px 0;
@@ -472,9 +482,11 @@ a {
   color: #515076;
 }
 .card__price-wrap {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr min-content min-content;
   margin-top: auto;
-  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 .card__price-title {
   margin: 0;
@@ -486,6 +498,13 @@ a {
 }
 .card__price {
   margin: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  color: #515076;
+  font-weight: 400;
+}
+.card__price-currency {
   font-family: "Montserrat", Arial, sans-serif;
   font-size: 20px;
   line-height: 24px;
