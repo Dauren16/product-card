@@ -35,7 +35,6 @@ function showCards() {
       cardClone.querySelector('.card__heading').textContent = card.name;
       cardClone.querySelector('.card__text').textContent = card.description;
 
-
       const cardInnerList = cardClone.querySelector('.card__composition')
       card.composition.forEach(item => {
         const liElement = document.createElement('li');
@@ -48,8 +47,6 @@ function showCards() {
       })
   } else {
       alert('Введите корректное значение')
-      cardsCount = Number(prompt('Сколько карточек отобразить?'))
-      showCards()
     }
 }
 
