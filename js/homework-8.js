@@ -47,6 +47,7 @@ function showCards() {
       })
   } else {
       alert('Введите корректное значение')
+      showCards()
     }
 }
 
