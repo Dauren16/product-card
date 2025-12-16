@@ -6,7 +6,7 @@
   <title>Карточки продуктов по уходу за кожей</title>
   <link rel="stylesheet" href="scss/style.css">
 </head>
-<body>
+<body class="page">
   <main class="main">
     <section class="section">
       <div class="container">
@@ -16,6 +16,7 @@
           <button id="link" class="section__link btn">Перейти в Google</button>
           <button id="output-console" class="section__output-console btn">Вывести в консоль</button>
           <button id="button-change-color" class="section__button-change-color btn">Сменить цвет кнопки</button>
+          <button id="button-registration" class="section__button-change-color btn">Регистрация</button>
         </div>
         <div class="section__wrapper">
           <h1 class="section__heading">Выбери свой продукт</h1>
@@ -43,10 +44,81 @@
       </div>
     </section>
   </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="footer__introduce">
+          <h3 class="footer__title">Product Cards</h3>
+          <p class="footer__descr">У нас самые лучшие продукты для кожи!</p>
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a class="footer__link" href="#">
+                <svg class="footer__link-icon" width="24" height="24" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-telegram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#">
+                <svg class="footer__link-icon" width="24" height="24" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-vk"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <form class="footer__form" action="#" method="GET">
+          <div class="custom-input">
+            <label class="custom-input__label" for="email-input-field">
+              Подпишись на наши акции:
+            </label>
+            <div class="custom-input__inner">
+              <input class="custom-input__field" name="email" id="email-input-field" type="email" required placeholder="Введите Email...">
+              <button class="custom-input__btn" type="submit">Подписаться</button>
+            </div>
+          </div>
+        </form>
+        <nav class="footer__nav">
+          <span class="footer__nav-title">Быстрые ссылки</span>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a class="footer__nav-link" href="#">Главная</a>
+            </li>
+            <li class="footer__nav-item">
+              <a class="footer__nav-link" href="#">Магазин</a>
+            </li>
+            <li class="footer__nav-item">
+              <a class="footer__nav-link" href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <span class="footer__copyright">www.product-cards.com©all right reserve</span>
+    </div>
+  </footer>
+  <div class="modal">
+    <form class="modal-form" action="#" method="GET">
+      <button class="modal-form__close-btn" type="submit">X</button>
+      <label class="modal-form__label" for="surname-input">Введите вашу фамилию</label>
+      <input class="modal-form__field" name="user-surname" id="surname-input" type="text" required placeholder="Иванов">
+      <label class="modal-form__label" for="name-input">Введите ваше имя</label>
+      <input class="modal-form__field" name="user-name" id="name-input" type="text" required placeholder="Иван">
+      <label class="modal-form__label" for="date-input">Введите дату рождения</label>
+      <input class="modal-form__field" name="register-date" id="date-input" type="date" required>
+      <label class="modal-form__label" for="login-input">Введите Логин</label>
+      <input class="modal-form__field" name="login" id="login-input" type="text" required placeholder="Ivanov.Ivan">
+      <label class="modal-form__label" for="password-input">Введите Пароль</label>
+      <input class="modal-form__field" name="password" id="password-input" type="password" required>
+      <label class="modal-form__label" for="password-input">Введите Пароль повторно</label>
+      <input class="modal-form__field" name="check-password" id="check-password-input" type="password" required>
+      <button class="modal-form__registration-btn" type="submit">Регистрировать</button>
+    </form>
+  </div>
   <script src="js/script.js"></script>
   <script src="js/homework-6.js"></script>
   <script src="js/homework-5.js"></script>
   <script type="module" src="js/homework-7.js"></script>
   <script type="module" src="js/homework-8.js"></script>
+  <script type="module" src="js/homework-9.js"></script>
 </body>
 </html>

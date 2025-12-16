@@ -1,0 +1,59 @@
+.modal-form {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  width: 45vw;
+  border-radius: 10px;
+  background-color: $footer;
+  gap: 5px;
+  padding: 10px;
+
+  &__close-btn {
+    color: $white;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  &__label {
+    display: block;
+    font-family: $ff;
+    font-weight: 400;
+    font-size: 18px;
+    color: $white;
+    margin-bottom: 13px;
+    cursor: pointer;
+  }
+  &__field {
+    font-family: $ff;
+    width: 70%;
+    border: none;
+    overflow: hidden;
+    border-radius: 8px;
+    padding: 5px;
+    ::placeholder {
+      background: rgba(0, 0, 0, 0.75);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__registration-btn {
+    background-color: $white;
+    font-family: $ff;
+    font-weight: 500;
+    font-size: 18px;
+    color: $black;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+}

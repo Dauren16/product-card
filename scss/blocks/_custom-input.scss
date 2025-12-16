@@ -1,0 +1,57 @@
+.custom-input {
+  position: relative;
+
+  &__label {
+    display: block;
+    font-family: $ff;
+    font-weight: 400;
+    font-size: 24px;
+    color: $white;
+    margin-bottom: 13px;
+    cursor: pointer;
+  }
+
+  &__inner {
+    width: 477px;
+    border-radius: 10px;
+    background-color: $white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 15px 20px 36px;
+  }
+
+  &__field {
+    font-family: $ff;
+    width: 100%;
+    border: none;
+    overflow: hidden;
+    ::placeholder {
+      background: rgba(0, 0, 0, 0.75);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    background-color: transparent;
+    font-family: $ff;
+    font-weight: 500;
+    font-size: 18px;
+    color: $black;
+    border: none;
+    padding: 0 0 0 15px;
+    cursor: pointer;
+
+     &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      height: 60%;
+      border-left: 1px solid $black;
+    }
+  }
+}

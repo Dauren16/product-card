@@ -39,18 +39,18 @@ buyProduct(200);
 
 //task 6
 
-function greet() {
-  const introducePerson = prompt('Введите ваше имя');
-  const checkAge = prompt('Введите ваш возраст');
+// function greet() {
+//   const introducePerson = prompt('Введите ваше имя');
+//   const checkAge = prompt('Введите ваш возраст');
 
-  if(checkAge >= 18) {
-    console.log(`Добро пожаловать ${introducePerson}`);
-  } else {
-    console.log(`Извините ${introducePerson} но вам доступ запрещен`);
-  }
-}
+//   if(checkAge >= 18) {
+//     console.log(`Добро пожаловать ${introducePerson}`);
+//   } else {
+//     console.log(`Извините ${introducePerson} но вам доступ запрещен`);
+//   }
+// }
 
-greet();
+// greet();
 
 //task 7
 
