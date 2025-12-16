@@ -51,12 +51,24 @@
     color: $violet;
   }
 
-  &__list {
+  &__composition {
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0 0 0 8px;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $violet;
+
+    li {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 400;
+      color: $violet;
+    }
   }
+
 
   &__item {
     margin: 0 0 5px 0;
@@ -68,9 +80,11 @@
   }
 
   &__price-wrap {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr min-content min-content;
     margin-top: auto;
-    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
   }
 
   &__price-title {
@@ -84,6 +98,14 @@
 
   &__price {
     margin: 0;
+    font-family: $ff;
+    font-size: 20px;
+    line-height: 24px;
+    color: $violet;
+    font-weight: 400;
+  }
+
+  &__price-currency {
     font-family: $ff;
     font-size: 20px;
     line-height: 24px;
