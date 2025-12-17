@@ -54,9 +54,3 @@ registrationForm.addEventListener('submit', (event) => {
   modal.classList.remove('modal--showed');
   overlay.classList.remove('page--overlay');
 })
-
-
-
-
-
-
