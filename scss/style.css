@@ -358,6 +358,20 @@ a {
   font-style: normal;
   font-display: swap;
 }
+.page {
+  position: relative;
+}
+.page--overlay::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
 .btn {
   background-color: #A5A3B9;
   border: 2px solid #000;
@@ -510,4 +524,215 @@ a {
   line-height: 24px;
   color: #515076;
   font-weight: 400;
+}
+
+.footer {
+  background-color: #3a3a3a;
+}
+.footer__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 85px 0 28px 0;
+}
+.footer__title {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  color: #fff;
+  margin: 0 0 16px 0;
+}
+.footer__descr {
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  margin: 0 0 43px 0;
+  font-family: "Montserrat", Arial, sans-serif;
+}
+.footer__list {
+  display: flex;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.footer__nav-title {
+  font-weight: 500;
+  font-size: 20px;
+  color: #fff;
+}
+.footer__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  color: #fff;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.footer__nav-title {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 15px;
+}
+.footer__link-icon {
+  color: #fff;
+}
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.footer__copyright {
+  position: relative;
+  display: block;
+  font-family: "Montserrat", Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+  padding: 33px 0 28px 0;
+}
+.footer__copyright::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: 1px solid #fff;
+  width: 66px;
+}
+
+.custom-input {
+  position: relative;
+}
+.custom-input__label {
+  display: block;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 13px;
+  cursor: pointer;
+}
+.custom-input__inner {
+  width: 477px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 15px 20px 36px;
+}
+.custom-input__field {
+  font-family: "Montserrat", Arial, sans-serif;
+  width: 100%;
+  border: none;
+  overflow: hidden;
+}
+.custom-input__field ::-moz-placeholder {
+  background: rgba(0, 0, 0, 0.75);
+}
+.custom-input__field ::placeholder {
+  background: rgba(0, 0, 0, 0.75);
+}
+.custom-input__field:focus {
+  outline: none;
+}
+.custom-input__btn {
+  position: relative;
+  background-color: transparent;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+  border: none;
+  padding: 0 0 0 15px;
+  cursor: pointer;
+}
+.custom-input__btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 60%;
+  border-left: 1px solid #000;
+}
+
+.modal {
+  display: none;
+}
+.modal--showed {
+  visibility: visible;
+  position: fixed;
+  z-index: 2;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-form {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  width: 45vw;
+  border-radius: 10px;
+  background-color: #3a3a3a;
+  gap: 5px;
+  padding: 10px;
+}
+.modal-form__close-btn {
+  color: #fff;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.modal-form__label {
+  display: block;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 13px;
+  cursor: pointer;
+}
+.modal-form__field {
+  font-family: "Montserrat", Arial, sans-serif;
+  width: 70%;
+  border: none;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 5px;
+}
+.modal-form__field ::-moz-placeholder {
+  background: rgba(0, 0, 0, 0.75);
+}
+.modal-form__field ::placeholder {
+  background: rgba(0, 0, 0, 0.75);
+}
+.modal-form__field:focus {
+  outline: none;
+}
+.modal-form__registration-btn {
+  background-color: #fff;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 8px;
 }/*# sourceMappingURL=style.css.map */
