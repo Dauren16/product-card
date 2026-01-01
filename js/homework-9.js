@@ -1,3 +1,6 @@
+import { Modal } from './Modal.js'
+import { Form } from './Form.js'
+
 let user = undefined;
 //4 Вывод почт в виде объектов в консоль
 
@@ -20,37 +23,40 @@ const password = document.getElementById('password-input');
 const checkPassword = document.getElementById('check-password-input');
 const registrationForm = document.querySelector('.modal-form');
 
+const modalInstance = new Modal('modal');
+const formInstance = new Form('registration-form');
+
 registrationOpenButton.addEventListener('click', () => {
-  overlay.classList.add('page--overlay')
-  modal.classList.add('modal--showed')
-})
+  overlay.classList.add('page--overlay');
+  modalInstance.openModal();
+});
 
 closeModal.addEventListener('click', () => {
   overlay.classList.remove('page--overlay')
-  modal.classList.remove('modal--showed')
+  modalInstance.closeModalBtn();
 })
 
 registrationForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  if (!registrationForm.checkValidity()) {
+  if (!formInstance.isValid()) {
     alert('Форма заполнена неверно!');
     return;
   }
 
-  if(password.value !== checkPassword.value) {
+  if (password.value !== checkPassword.value) {
     alert('Пароли не совпадают');
     return;
   }
 
-  const formData = new FormData(registrationForm);
-  user = Object.fromEntries(formData.entries());
-  user.createdOn = new Date();
+  user = {
+    ...formInstance.getValue(),
+    createdOn: new Date()
+  };
 
   console.log(user);
 
-  registrationForm.reset();
-
-  modal.classList.remove('modal--showed');
+  formInstance.reset();
+  modalInstance.closeModal();
   overlay.classList.remove('page--overlay');
-})
+});
