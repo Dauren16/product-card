@@ -6,7 +6,7 @@
   <title>Карточки продуктов по уходу за кожей</title>
   <link rel="stylesheet" href="scss/style.css">
 </head>
-<body class="page">
+<body class="page" id="overlay">
   <main class="main">
     <section class="section">
       <div class="container">
@@ -92,8 +92,8 @@
       <span class="footer__copyright">www.product-cards.com©all right reserve</span>
     </div>
   </footer>
-  <div class="modal">
-    <form class="modal-form" action="#" method="GET">
+  <div class="modal" id="modal">
+    <form class="modal-form" id="registration-form" action="#" method="GET">
       <button class="modal-form__close-btn" type="submit">X</button>
       <label class="modal-form__label" for="surname-input">Введите вашу фамилию</label>
       <input class="modal-form__field" name="user-surname" id="surname-input" type="text" required placeholder="Иванов">
@@ -110,11 +110,6 @@
       <button class="modal-form__registration-btn" type="submit">Регистрировать</button>
     </form>
   </div>
-  <script src="js/script.js"></script>
-  <script src="js/homework-6.js"></script>
-  <script src="js/homework-5.js"></script>
-  <script type="module" src="js/homework-7.js"></script>
-  <script type="module" src="js/homework-8.js"></script>
-  <script type="module" src="js/homework-9.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

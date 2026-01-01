@@ -35,7 +35,7 @@ console.log(filteredByEmail);
 
 //task 8
 
-const filteredByPostId = userComments.map(comment => ({...comment, postId: element.postId  <= 5 ? 2 : 1}))
+const filteredByPostId = userComments.map(comment => ({...comment, postId: comment.postId  <= 5 ? 2 : 1}))
 
 console.log(filteredByPostId);
 
