@@ -1,12 +1,7 @@
 import { Game } from './Game.js'
 
-class GameDetails extends Game {
-  constructor(name, genre, developer, year) {
-    super(name, genre, developer)
-    this.year = year;
-  }
+const gta = new Game('GTA V', 'action', 'Rockstar', 2013);
+const witcher = new Game('The Witcher 3', 'RPG', 'CD Projekt', 2015);
 
-  showGame() {
-    console.log(`Эту игру ${this.name} ${this.year} года, в жанре ${this.genre} разработала ${this.developer}`);
-  }
-}
+gta.showGame();
+witcher.showGame();

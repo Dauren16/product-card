@@ -4,6 +4,7 @@ export class Modal {
   }
 
   openModal() {
+    this.initCloseButton();
     this.modal.classList.add('modal--showed');
   }
 
@@ -15,7 +16,7 @@ export class Modal {
     return this.modal.classList.contains('modal--showed');
   }
 
-  closeModalBtn() {
+  initCloseButton() {
     const closeBtn = this.modal.querySelector('.modal-form__close-btn');
     if (!closeBtn) return;
 
