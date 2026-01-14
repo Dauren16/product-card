@@ -6,7 +6,7 @@ export class Cafe {
   }
 
   getInfoAboutCafe() {
-    return `Кафе ${this.name} распаложен в ${this.location}`;
+    return `Кафе ${ this.name } распаложен в ${ this.location }`;
   }
  
   orderDrink(drink) {

@@ -8,12 +8,13 @@ export class Drink {
     this.price = price;
     this.#temperature = 0;
   }
+  
   getInfo() {
-    return `Напиток: ${this.name}, размер: ${this.size}, цена: ${this.price}, температура: ${this.#temperature}`;
+    return `Напиток: ${ this.name }, размер: ${ this.size }, цена: ${ this.price }, температура: ${ this.#temperature }`;
   }
 
   getTemperature() {
-    return `Температура напитка ${this.name}, ${this.#temperature} градусов`;
+    return `Температура напитка ${ this.name }, ${ this.#temperature } градусов`;
   }
 
   setTemperature(value) {
@@ -30,11 +31,11 @@ export class Drink {
     } else {
       this.setTemperature(drinkTemperature);
     }
-    return `Напиток ${this.name} (${this.size}) готовится за ${this.price}₸`;
+    return `Напиток ${ this.name } (${ this.size }) готовится за ${ this.price }₸`;
   }
 
   dishOutDrink() {
     this.#prepareDrink();
-    return `Напиток ${this.name} готов`;
+    return `Напиток ${ this.name } готов`;
   }
 }
