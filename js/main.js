@@ -1,0 +1,12 @@
+import './cards.js';
+import './comments.js';
+import './script.js';
+import './homework-5.js';
+import './homework-6.js';
+import './homework-7.js';
+import './homework-8.js';
+import './homework-9.js';
+import './Game.js';
+import './GameDetails.js';
+import './Modal.js';
+import './Form.js';
