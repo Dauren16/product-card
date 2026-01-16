@@ -358,11 +358,8 @@ a {
   font-style: normal;
   font-display: swap;
 }
-.page {
-  position: relative;
-}
-.page--overlay::before {
-  content: "";
+.overlay {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -370,6 +367,9 @@ a {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
+}
+.overlay--showed {
+  display: block;
 }
 
 .btn {
@@ -578,9 +578,6 @@ a {
   font-weight: 400;
   display: block;
   margin-bottom: 15px;
-}
-.footer__link-icon {
-  color: #fff;
 }
 .footer__nav {
   display: flex;

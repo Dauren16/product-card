@@ -6,7 +6,8 @@
   <title>Карточки продуктов по уходу за кожей</title>
   <link rel="stylesheet" href="scss/style.css">
 </head>
-<body class="page" id="overlay">
+<body class="page">
+  <div class="overlay" id="overlay"></div>
   <main class="main">
     <section class="section">
       <div class="container">
@@ -20,26 +21,26 @@
         </div>
         <div class="section__wrapper">
           <h1 class="section__heading">Выбери свой продукт</h1>
-            <ul class="card-list">
-            </ul>
-            <template class="card-list__template">
-                <li class="card-list__item">
-                  <div class="card">
-                    <img class="card__image" width="290" height="245">
-                    <span class="card__descr">для нормальной кожи</span>
-                    <h2 class="card__heading"></h2>
-                    <p class="card__text"></p>
-                    <span class="card__list-title">Состав:</span>
-                    <ul class="card__composition">
-                    </ul>
-                    <div class="card__price-wrap">
-                      <span class="card__price-title">Цена</span>
-                      <span class="card__price"></span>
-                      <span class="card__price-currency">&#8381</span>
-                    </div>
-                  </div>
-                </li>
-            </template>
+          <ul class="card-list">
+          </ul>
+          <template class="card-list__template">
+            <li class="card-list__item">
+              <div class="card">
+                <img class="card__image" width="290" height="245">
+                <span class="card__descr">для нормальной кожи</span>
+                <h2 class="card__heading"></h2>
+                <p class="card__text"></p>
+                <span class="card__list-title">Состав:</span>
+                <ul class="card__composition">
+                </ul>
+                <div class="card__price-wrap">
+                  <span class="card__price-title">Цена</span>
+                  <span class="card__price"></span>
+                  <span class="card__price-currency">&#8381</span>
+                </div>
+              </div>
+            </li>
+          </template>
         </div>
       </div>
     </section>
@@ -106,7 +107,7 @@
       <label class="modal-form__label" for="password-input">Введите Пароль</label>
       <input class="modal-form__field" name="password" id="password-input" type="password" required>
       <label class="modal-form__label" for="password-input">Введите Пароль повторно</label>
-      <input class="modal-form__field" name="check-password" id="check-password-input" type="password" required>
+      <input class="modal-form__field" name="check-password" id="check-password-input"    type="password" required>
       <button class="modal-form__registration-btn" type="submit">Регистрировать</button>
     </form>
   </div>
