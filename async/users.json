@@ -1,0 +1,35 @@
+{ "users" : [
+    { 
+      "id" : 1,
+      "name" : "Dauren",
+      "surname" : "Ibrayev",
+      "email" : "daurenibraev1995@gmail.com",
+      "age" : 30,
+      "img" : "user-avatar"
+    },
+    {
+      "id" : 2,
+      "name" : "Aaron",
+      "surname" : "Taylor",
+      "email" : "aarontaylor@gmail.com",
+      "age": 40,
+      "img" : "user-avatar"
+    },
+    {
+      "id" : 3,
+      "name" : "Henry",
+      "surname" : "Cavil",
+      "email" : "henrycavil@gmail.com",
+      "age" : 43,
+      "img" : "user-avatar"
+    },
+    {
+      "id" : 4,
+      "name" : "Chris",
+      "surname" : "Evans",
+      "email" : "chrisevans@gmail.com",
+      "age" : 41,
+      "img" : "user-avatar"
+    }
+  ]
+}
