@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Организационная структура компании</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="async.css">
+</head>
+<body>
+  <main class="main">
+    <div class="container">
+      <section class="section">
+        <h1 class="section__heading">Сотрудники компании</h1>
+        <p class="message"></p>
+        <div class="section__btn-wrapper">
+          <button class="section__delete-users button" id="section__delete-users" type="button">
+            Удалить всех пользователей
+          </button>
+          <button class="section__get-users button" id="section__get-users" type="button">Запросить всех пользователей</button>
+        </div>
+        <ul class="users-list"></ul>
+        <template id="user-card__template">
+          <li class="users-item">
+            <div class="user-card">
+              <img class="user-card__avatar" width="64" height="64" alt="Аватарка пользователя">
+              <div class="user-card__data-wrapper">
+                <span class="user-card__id"></span>
+                <span class="user-card__name"></span>
+                <span class="user-card__surname"></span>
+                <span class="user-card__email"></span>
+                <span class="user-card__age"></span>
+              </div>
+              <button class="user-card__delete-button" id="user-card__delete-button" type="button">Удалить пользователя</button>
+            </div>
+          </li>
+        </template>
+      </section>
+    </div>
+  </main>
+  <script src="async.js"></script>
+</body>
+</html>
