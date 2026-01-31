@@ -4,14 +4,8 @@ const statusText = document.querySelector('.message');
 const usersList = document.querySelector('.users-list');
 const userCardTemplate = document.querySelector('#user-card__template');
 
-function setStatus(message, timeout = 0) {
+function setStatus(message = '') {
   statusText.textContent = message;
-
-  if (timeout > 0) {
-    setTimeout(() => {
-      statusText.textContent = '';
-    }, timeout);
-  }
 }
 
 function renderUsers(users) {
@@ -84,7 +78,7 @@ initUsers();
 
 deleteAllUsersButton.addEventListener('click', () => {
   localStorage.removeItem('users');
-  renderUsers([]);
+  usersList.innerHTML = '';
 });
 
 getAllUsersButton.addEventListener('click', async () => {
