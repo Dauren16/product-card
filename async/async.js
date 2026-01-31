@@ -1,98 +1,116 @@
-const userCardTemplate = document.getElementById('user-card__template');
+const deleteAllUsersButton = document.querySelector('#section__delete-users');
+const getAllUsersButton = document.querySelector('#section__get-users');
+const statusText = document.querySelector('.message');
 const usersList = document.querySelector('.users-list');
-const status = document.querySelector('.message');
-const getAllCardBtn = document.querySelector('.section__get-users');
-const deleteAllCardBtn = document.querySelector('.section__delete-users');
+const userCardTemplate = document.querySelector('#user-card__template');
 
-async function fetchUsers() {
-  try {
-    const storedUsers = localStorage.getItem('users');
-    if (storedUsers) {
-      const parsed = JSON.parse(storedUsers);
-      return Array.isArray(parsed) ? parsed : [];
-    }
+function setStatus(message, timeout = 0) {
+  statusText.textContent = message;
 
-    status.textContent = 'Загрузка данных...';
-
-    const response = await fetch('users.json');
-    if (!response.ok) {
-      throw new Error('Не удалось загрузить файл users.json');
-    }
-
-    const data = await response.json();
-
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    const users = Array.isArray(data.users) ? data.users : [];
-    localStorage.setItem('users', JSON.stringify(users));
-    return users;
-  } catch (error) {
-    status.textContent = `Ошибка: ${error.message}`;
-    console.error('Ошибка загрузки данных:', error);
-    return [];
+  if (timeout > 0) {
+    setTimeout(() => {
+      statusText.textContent = '';
+    }, timeout);
   }
-}
-
-async function initUsers() {
-  const users = await fetchUsers();
-  status.textContent = '';
-  renderUsers(users);
 }
 
 function renderUsers(users) {
   usersList.innerHTML = '';
 
   if (!Array.isArray(users) || users.length === 0) {
-    usersList.innerHTML = '<p>Нет пользователей</p>';
+    usersList.innerHTML = '<li>Нет пользователей</li>';
     return;
   }
 
   users.forEach(user => {
-    const userClone = userCardTemplate.content.cloneNode(true);
+    const userCardClone = userCardTemplate.content.cloneNode(true);
 
-    userClone.querySelector('.user-card__avatar').src = `../images/${ user.img }.png`;
-    userClone.querySelector('.user-card__id').textContent = `id: ${ user.id }`;
-    userClone.querySelector('.user-card__name').textContent = `Имя: ${ user.name }`;
-    userClone.querySelector('.user-card__surname').textContent = `Фамилия: ${ user.surname }`;
-    userClone.querySelector('.user-card__email').textContent = `Почта: ${ user.email }`;
-    userClone.querySelector('.user-card__age').textContent = `Возраст: ${ user.age }`;
+    const card = userCardClone.querySelector('.user-card');
+    card.dataset.userId = user.id; // 🔹 сохраняем id пользователя
 
-    const deleteBtn = userClone.querySelector('.user-card__delete-button');
-    deleteBtn.dataset.userId = user.id;
-    deleteBtn.addEventListener('click', handleDeleteUser);
+    userCardClone.querySelector('.user-card__avatar').src =
+      `images/${user.img}.jpg`;
+    userCardClone.querySelector('.user-card__id').textContent = `ID: ${user.id}`;
+    userCardClone.querySelector('.user-card__name').textContent = `Имя: ${user.name}`;
+    userCardClone.querySelector('.user-card__surname').textContent = `Фамилия: ${user.surname}`;
+    userCardClone.querySelector('.user-card__email').textContent = `Эл.почта: ${user.email}`;
+    userCardClone.querySelector('.user-card__age').textContent = `Возраст: ${user.age}`;
 
-    usersList.appendChild(userClone);
+    usersList.appendChild(userCardClone);
   });
 }
 
-function handleDeleteUser(event) {
-  const userId = Number(event.target.dataset.userId);
-  const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
-
-  const updatedUsers = storedUsers.filter(user => user.id !== userId);
-  localStorage.setItem('users', JSON.stringify(updatedUsers));
-  renderUsers(updatedUsers);
+function saveUsersToStorage(users) {
+  localStorage.setItem('users', JSON.stringify(users));
 }
 
-function handleDeleteAllUsers() {
-  localStorage.setItem('users', JSON.stringify([]));
-  renderUsers([]);
+function getUsersFromStorage() {
+  const data = localStorage.getItem('users');
+  return data ? JSON.parse(data) : null;
 }
 
-async function handleGetAllUsers() {
-  const users = await fetchUsers();
+async function fetchUsers() {
+  const response = await fetch('users.json');
+  if (!response.ok) {
+    throw new Error('Ошибка загрузки users.json');
+  }
 
-  if (usersList.children.length === users.length) {
-    status.textContent = 'Все пользователи уже отображены';
-    setTimeout(() => (status.textContent = ''), 1500);
+  const data = await response.json();
+  return Array.isArray(data.users) ? data.users : [];
+}
+
+async function initUsers() {
+  const usersFromStorage = getUsersFromStorage();
+
+  if (usersFromStorage) {
+    renderUsers(usersFromStorage);
     return;
   }
 
-  status.textContent = '';
-  renderUsers(users);
+  try {
+    setStatus('Загрузка данных...');
+
+    const users = await fetchUsers();
+    saveUsersToStorage(users);
+    renderUsers(users);
+  } catch (error) {
+    setStatus('Ошибка при загрузке данных', 3000);
+  } finally {
+    setStatus('');
+  }
 }
 
-getAllCardBtn.addEventListener('click', handleGetAllUsers);
-deleteAllCardBtn.addEventListener('click', handleDeleteAllUsers);
-
 initUsers();
+
+deleteAllUsersButton.addEventListener('click', () => {
+  localStorage.removeItem('users');
+  renderUsers([]);
+});
+
+getAllUsersButton.addEventListener('click', async () => {
+  try {
+    setStatus('Загрузка данных...');
+
+    const users = await fetchUsers();
+    saveUsersToStorage(users);
+    renderUsers(users);
+  } catch (error) {
+    setStatus('Ошибка при загрузке данных', 3000);
+  } finally {
+    setStatus('');
+  }
+});
+
+usersList.addEventListener('click', event => {
+  const deleteButton = event.target.closest('.user-card__delete-button');
+  if (!deleteButton) return;
+
+  const card = deleteButton.closest('.user-card');
+  const userId = Number(card.dataset.userId);
+
+  const users = getUsersFromStorage() || [];
+  const updatedUsers = users.filter(user => user.id !== userId);
+
+  saveUsersToStorage(updatedUsers);
+  renderUsers(updatedUsers);
+});
